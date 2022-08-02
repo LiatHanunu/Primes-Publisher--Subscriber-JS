@@ -1,4 +1,4 @@
-import MyEvent from "../common/MyEvent"
+import MyEvent from "../common/MyEvent.js"
 
 function isPrime(num) {
     for (let i = 2; i <= Math.sqrt(num); i++) {
