@@ -2,7 +2,7 @@
 
 const prime4Digits = (num)=>{
     
-    if(Math.floor(num/10000)==0){
+    if(Math.floor(num/10000)==0 && Math.floor(num/1000)!=0){
         console.log(10000-num)
     }
 }
