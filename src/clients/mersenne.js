@@ -6,10 +6,9 @@ const isMersen = (num) => {
     }else{
         let i = 2
         while (i <= num) {
-            (i **= 2) - 1
-    
+            i *= 2 
         }
-        if (num == i) {
+        if (num == i-1) {
             console.log(`${num} IS a MERSENNE NUMBER`)
         }
     }
