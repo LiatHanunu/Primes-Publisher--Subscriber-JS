@@ -1,4 +1,4 @@
-import MyEvent from "../common/MyEvent.js"
+import events from 'events'
 
 function isPrime(num) {
     for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -18,7 +18,7 @@ function* primeNumbersGenrator(limit) {
 
 }
 
-class primesGenerator extends MyEvent {
+class primesGenerator extends events {
     primeEvent(limit) {
         const prime = primeNumbersGenrator(limit)
         const getNext = () => {
