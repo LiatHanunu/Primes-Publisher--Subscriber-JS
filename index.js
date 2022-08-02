@@ -1,3 +1,3 @@
 import { startPrimeEvent } from './src/app.js'
 
-startPrimeEvent(30)
+startPrimeEvent(10000)

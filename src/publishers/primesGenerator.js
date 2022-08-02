@@ -8,23 +8,24 @@ function isPrime(num) {
     } return true
 }
 
-function primeNumbers(limit) {
-    const primeNumbersList = [2]
-    for (let i = 3; i < limit; i++) {
+function* primeNumbersGenrator(limit) {
+    yield 2
+    for (let i = 3; i < limit; i+=2) {
         if (isPrime(i)) {
-            primeNumbersList.push(i)
+            yield i
         }
     }
-    return primeNumbersList
+
 }
 
 class primesGenerator extends MyEvent {
     primeEvent(limit) {
-        const primeList = primeNumbers(limit)
+        const prime = primeNumbersGenrator(limit)
         const getNext = () => {
-            if (!primeList[0]) { clearInterval(intervalID) }
+            const currentNumber = prime.next().value
+            if (!currentNumber) { clearInterval(intervalID) }
             else {
-                this.emit('prime', primeList.shift())
+                this.emit('prime', currentNumber)
             }
         }
         const intervalID = setInterval(getNext, 1000);
