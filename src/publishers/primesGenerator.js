@@ -1,3 +1,5 @@
+import MyEvent from "../common/MyEvent"
+
 function isPrime(num) {
     for (let i = 2; i <= Math.sqrt(num); i++) {
         if (num % i == 0) {
@@ -16,4 +18,17 @@ function primeNumbers(limit) {
     return primeNumbersList
 }
 
-export default primeNumbers
+class primesGenerator extends MyEvent {
+    primeEvent(limit) {
+        const primeList = primeNumbers(limit)
+        const getNext = () => {
+            if (!primeList[0]) { clearInterval(intervalID) }
+            else {
+                this.emit('prime', primeList.shift())
+            }
+        }
+        const intervalID = setInterval(getNext, 1000);
+    }
+}
+
+export default primesGenerator
