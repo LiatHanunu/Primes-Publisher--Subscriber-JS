@@ -1,14 +1,16 @@
-import primesGenerator from "./publishers/primesGenerator";
-import prime1 from "./clients/prime1";
-import isMersen from "./clients/mersenne";
-import prime4Digits from "./clients/prime4Digits";
+import primesGenerator from "./publishers/primesGenerator.js";
+import prime1 from "./clients/prime1.js";
+import isMersen from "./clients/mersenne.js";
+import prime4Digits from "./clients/prime4Digits.js";
 
-primesGenerator.on('prime',isMersen)
-primesGenerator.on('prime',prime1)
-primesGenerator.on('prime',prime4Digits)
+const primes = new primesGenerator()
+
+primes.on('prime',isMersen)
+primes.on('prime',prime1)
+primes.on('prime',prime4Digits)
 
 const startPrimeEvent =(limit)=>{
-    primesGenerator.primeEvent(limit)
+    primes.primeEvent(limit)
 }
 
 export { startPrimeEvent }
