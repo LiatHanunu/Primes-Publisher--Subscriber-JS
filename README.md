@@ -1,4 +1,7 @@
 # PrimesPubSubEX
+
+This EX is a node EX that practices publisher-design-pattern.
+
 Prime Numbers Generator instructions:
 
 Create a prime number "service" that emits the next prime number on every second (starting from 1 until a certain limit the user chooses).
