@@ -1,4 +1,4 @@
-# PrimesPubSubEX
+# Primes Publisher Subscriber EX
 
 ###### This EX is a node EX that practices publisher-design-pattern.
 
